@@ -1,0 +1,5 @@
+entity\Mechineinfo_.class
+facade\MachineInfoMapper.class
+entity\Mechineinfo.class
+rest\GenericResource.class
+rest\ApplicationConfig.class
