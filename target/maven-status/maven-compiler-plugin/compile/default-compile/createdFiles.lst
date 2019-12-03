@@ -1,5 +1,10 @@
-entity\Mechineinfo_.class
+cors\CorsRequestFilter.class
+utils\DayProductionChartPoints.class
+cors\CorsResponseFilter.class
 facade\MachineInfoMapper.class
-entity\Mechineinfo.class
-rest\GenericResource.class
+logicLayer\DayProductionGoodBad.class
 rest\ApplicationConfig.class
+entity\Mechineinfo_.class
+entity\Mechineinfo.class
+test\testermain.class
+rest\GenericResource.class
