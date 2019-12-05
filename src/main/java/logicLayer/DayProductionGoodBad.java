@@ -3,6 +3,7 @@ package logicLayer;
 import entity.Mechineinfo;
 import java.util.Date;
 import java.util.List;
+import org.eclipse.persistence.jpa.jpql.parser.DateTime;
 import utils.DayProductionChartPoints;
 
 public class DayProductionGoodBad {
@@ -15,13 +16,13 @@ public class DayProductionGoodBad {
 
     public DayProductionChartPoints countGoodBadProduction() {
         boolean bool = true;
-        Date dateTime;
+        Date dateTime = new Date(System.currentTimeMillis());
         Integer good = 0;
         Integer bad = 0;
         DayProductionChartPoints DPCP = new DayProductionChartPoints();
 
         for (int i = 0; i < dataPull.size() - 1; i++) {
-            if (bool)/*IF dataPull.get(i).getDate > dateTime???*/ {
+            if (dataPull.get(i).getDate().after(dateTime))/*IF dataPull.get(i).getDate > dateTime???*/ {
                 for (int j = i; j < dataPull.size() - 1; j++) {
                     if (bool)/*IF dataPull.get(i).getDate > dateTime(x hour)*/ {
                         if (dataPull.get(j).getStatus() == 1) {
