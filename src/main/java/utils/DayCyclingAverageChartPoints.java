@@ -1,5 +1,7 @@
 package utils;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,12 +10,12 @@ import java.util.List;
  */
 public class DayCyclingAverageChartPoints {
     
-    private List<Double> aFixture;
-    private List<Double> bFixture;
-    private List<Double> cFixture;
-    private List<Double> dFixture;
-    private List<Double> fixtureAverage;
-    private List<String> fixtureTimeStamp;
+    private List<Double> aFixture = new ArrayList<>();
+    private List<Double> bFixture = new ArrayList<>();
+    private List<Double> cFixture = new ArrayList<>();
+    private List<Double> dFixture = new ArrayList<>();
+    private List<Double> fixtureAverage = new ArrayList<>();
+    private List<String> fixtureTimeStamp = new ArrayList<>();
     
     public DayCyclingAverageChartPoints(){
         
