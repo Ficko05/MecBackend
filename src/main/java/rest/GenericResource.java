@@ -11,10 +11,13 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import entity.Mechineinfo;
 import facade.MachineInfoMapper;
+import java.util.List;
 import javax.ws.rs.core.Response;
 import logicLayer.OnMaxCyceling;
 import logicLayer.DayProductionGoodBad;
+import utils.DayProductionChartPoints;
 
 
 /**
@@ -53,7 +56,9 @@ public class GenericResource {
     @Path("goodBad")
     @Produces(MediaType.APPLICATION_JSON)
     public Response GoodBadJson() {
-        String json = gson.toJson(DPGB.countGoodBadProduction(fp.getAll()));
+        List<Mechineinfo> data = fp.getAll();
+        DayProductionChartPoints dpcp = DPGB.countGoodBadProduction(data);
+        String json = gson.toJson(dpcp);
         
         return Response.ok(json).build();
     }

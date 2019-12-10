@@ -1,13 +1,14 @@
 
 package utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class DayProductionChartPoints {
     
-    private List<Integer> goodProduction;
-    private List<Integer> badProduction;
+    private List<Integer> goodProduction = new ArrayList<>();
+    private List<Integer> badProduction = new ArrayList<>();
 
     public DayProductionChartPoints() {
         
