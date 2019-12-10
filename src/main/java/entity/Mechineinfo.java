@@ -2,6 +2,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -82,9 +84,8 @@ public class Mechineinfo implements Serializable {
     private Double autoNum;
     @Column(name = "OrderId")
     private Double orderId;
-    @Column(name = "Date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date date;
+    @Column(name = "date", columnDefinition = "TIMESTAMP")
+    private LocalDateTime date;
     @Size(max = 45)
     @Column(name = "Fixtur")
     private String fixtur;
@@ -201,11 +202,11 @@ public class Mechineinfo implements Serializable {
         this.orderId = orderId;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
@@ -577,5 +578,9 @@ public class Mechineinfo implements Serializable {
     public String toString() {
         return "entity.Mechineinfo[ autoNum=" + autoNum + " ]";
     }
-    
+    /*public LocalDateTime dateToLocalDateTime(Date date){
+        LocalDateTime LDT = new LocalDateTime(date);
+        return LDT;
+    }
+    */
 }

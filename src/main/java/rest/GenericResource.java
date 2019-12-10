@@ -14,6 +14,8 @@ import com.google.gson.GsonBuilder;
 import facade.MachineInfoMapper;
 import javax.ws.rs.core.Response;
 import logicLayer.OnMaxCyceling;
+import logicLayer.DayProductionGoodBad;
+
 
 /**
  * REST Web Service
@@ -26,12 +28,13 @@ public class GenericResource {
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     OnMaxCyceling OMC = new OnMaxCyceling();
     MachineInfoMapper fp = new MachineInfoMapper(emf);
+    DayProductionGoodBad DPGB = new DayProductionGoodBad();
     
     @Context
     private UriInfo context;
 
     /**Gson gson;**/
-    
+
     
     public GenericResource() {
     }
@@ -46,6 +49,14 @@ public class GenericResource {
         return Response.ok(json).build();
     }
 
+    @GET
+    @Path("goodBad")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response GoodBadJson() {
+        String json = gson.toJson(DPGB.countGoodBadProduction(fp.getAll()));
+        
+        return Response.ok(json).build();
+    }
     
     
     
