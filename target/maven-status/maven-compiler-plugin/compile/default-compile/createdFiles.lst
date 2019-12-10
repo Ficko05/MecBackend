@@ -1,10 +1,12 @@
-cors\CorsRequestFilter.class
 utils\DayProductionChartPoints.class
-cors\CorsResponseFilter.class
-facade\MachineInfoMapper.class
 logicLayer\DayProductionGoodBad.class
-rest\ApplicationConfig.class
 entity\Mechineinfo_.class
 entity\Mechineinfo.class
+cors\CorsRequestFilter.class
+cors\CorsResponseFilter.class
+facade\MachineInfoMapper.class
+logicLayer\OnMaxCyceling.class
+rest\ApplicationConfig.class
 test\testermain.class
 rest\GenericResource.class
+utils\DayCyclingAverageChartPoints.class

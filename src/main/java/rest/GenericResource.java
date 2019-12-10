@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import facade.MachineInfoMapper;
 import javax.ws.rs.core.Response;
+import logicLayer.OnMaxCyceling;
 
 /**
  * REST Web Service
@@ -21,14 +22,16 @@ import javax.ws.rs.core.Response;
  */
 @Path("m7")
 public class GenericResource {
-     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
-     Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    OnMaxCyceling OMC = new OnMaxCyceling();
+    MachineInfoMapper fp = new MachineInfoMapper(emf);
+    
     @Context
     private UriInfo context;
 
     /**Gson gson;**/
-    MachineInfoMapper fp = new MachineInfoMapper(Persistence.createEntityManagerFactory("pu"));
+    
     
     public GenericResource() {
     }
@@ -43,5 +46,18 @@ public class GenericResource {
         return Response.ok(json).build();
     }
 
+    
+    
+    
+    @GET
+    @Path("cycling")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getCycling(){
+        
+        String json = gson.toJson(OMC.onMaxAverageGraph(fp.getAll()));
+        
+        return Response.ok(json).build();
+    }
+    
     
 }
