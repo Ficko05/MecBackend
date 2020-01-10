@@ -26,7 +26,7 @@ import utils.DayProductionChartPoints;
  * @author Ficko
  */
 @Path("m7")
-public class GenericResource {
+public class M7Resource {
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
     Gson gson = new GsonBuilder().setPrettyPrinting().create();
     OnMaxCyceling OMC = new OnMaxCyceling();
@@ -39,7 +39,7 @@ public class GenericResource {
     /**Gson gson;**/
 
     
-    public GenericResource() {
+    public M7Resource() {
     }
 
     
