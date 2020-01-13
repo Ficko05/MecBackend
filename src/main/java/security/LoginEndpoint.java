@@ -35,15 +35,15 @@ public class LoginEndpoint {
     public Response login(String jsonString) throws AuthenticationException {
 
         JsonObject json = new JsonParser().parse(jsonString).getAsJsonObject();
-        String username = json.get("username").getAsString();
-        String password = json.get("password").getAsString();
+        String username = json.get("userName").getAsString();
+        String password = json.get("userPassword").getAsString();
 
         //Todo refactor into facade
         try {
             User user = UserFacade.getInstance().getVeryfiedUser(username, password);
             String token = createToken(username);
             JsonObject responseJson = new JsonObject();
-            responseJson.addProperty("username", username);
+            responseJson.addProperty("userName", username);
             responseJson.addProperty("token", token);
             return Response.ok(new Gson().toJson(responseJson)).build();
 
@@ -66,7 +66,7 @@ public class LoginEndpoint {
         Date date = new Date();
         JWTClaimsSet claimsSet = new JWTClaimsSet.Builder()
                 .subject(userName)
-                .claim("username", userName)
+                .claim("userName", userName)
                 .claim("issuer", issuer)
                 .issueTime(date)
                 .expirationTime(new Date(date.getTime() + TOKEN_EXPIRE_TIME))

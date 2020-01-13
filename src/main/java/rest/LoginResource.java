@@ -18,7 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.core.UriInfo;
 
-@Path("login")
+@Path("createlogin")
 public class LoginResource {
     
     
@@ -45,8 +45,8 @@ public class LoginResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createUser(String json) throws Exception {
         User user = gson.fromJson(json, User.class);
-        //user.addRole(new Role("user"));
-        //user.hashPassword();
+       
+        user.hashPassword();
         
         User returnedUser = userMapper.create(user);
         //UserDTO userDTO = UserDTO.getUserDTO(returnedUser);

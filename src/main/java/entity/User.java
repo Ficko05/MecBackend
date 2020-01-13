@@ -33,7 +33,9 @@ import org.mindrot.jbcrypt.BCrypt;
     , @NamedQuery(name = "User.findByUserName", query = "SELECT u FROM User u WHERE u.userName = :userName")
     , @NamedQuery(name = "User.findByUserPassword", query = "SELECT u FROM User u WHERE u.userPassword = :userPassword")
     , @NamedQuery(name = "User.findByUserRole", query = "SELECT u FROM User u WHERE u.userRole = :userRole")
-    , @NamedQuery(name = "User.findByUserStatus", query = "SELECT u FROM User u WHERE u.userStatus = :userStatus")})
+    , @NamedQuery(name = "User.findByUserStatus", query = "SELECT u FROM User u WHERE u.userStatus = :userStatus")
+    , @NamedQuery(name = "User.loginUser", query = "SELECT u FROM User u WHERE u.userName = :userName")
+})
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;

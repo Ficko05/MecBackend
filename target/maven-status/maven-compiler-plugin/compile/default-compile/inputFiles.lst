@@ -10,6 +10,7 @@ C:\Users\Ficko\Desktop\MecBackend\src\main\java\rest\LoginResource.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\entity\Mechineinfo.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\rest\M7Resource.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\logicLayer\OnMaxCyceling.java
+C:\Users\Ficko\Desktop\MecBackend\src\main\java\security\SharedSecret.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\cors\CorsResponseFilter.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\facade\MachineInfoMapper.java
 C:\Users\Ficko\Desktop\MecBackend\src\main\java\utils\DayProductionChartPoints.java
