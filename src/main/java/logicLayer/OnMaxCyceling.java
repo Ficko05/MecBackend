@@ -31,7 +31,7 @@ public class OnMaxCyceling {
                     countA++;
                      aFixtureValue = aFixtureValue +  dataPull.get(i).getOnMaxN();
 
-                    if (countA % 4 == 0) {
+                    if (countA % 2 == 0) {
                         DCACP.addaFixture(aFixtureValue);
 //                        fixtureAverageValue = aFixtureValue + bFixtureValue + cFixtureValue + dFixtureValue / 120;
 //                        DCACP.addfixtureAverage(fixtureAverageValue);
@@ -45,7 +45,7 @@ public class OnMaxCyceling {
                     countB++;
                      bFixtureValue = bFixtureValue + dataPull.get(i).getOnMaxN();
 
-                    if (countB % 4 == 0) {
+                    if (countB % 2 == 0) {
                         DCACP.addbFixture(bFixtureValue);
 //                        fixtureAverageValue = aFixtureValue + bFixtureValue + cFixtureValue + dFixtureValue / 120;
 //                        DCACP.addfixtureAverage(fixtureAverageValue);
@@ -59,7 +59,7 @@ public class OnMaxCyceling {
                     countC++;
                      cFixtureValue = cFixtureValue + dataPull.get(i).getOnMaxN();
 
-                    if (countC % 4 == 0) {
+                    if (countC % 2 == 0) {
                         DCACP.addcFixture(cFixtureValue);
 //                        fixtureAverageValue = aFixtureValue + bFixtureValue + cFixtureValue + dFixtureValue / 120;
 //                        DCACP.addfixtureAverage(fixtureAverageValue);
@@ -73,7 +73,7 @@ public class OnMaxCyceling {
                     countD++;
                      dFixtureValue = dFixtureValue + dataPull.get(i).getOnMaxN();
 
-                    if (countD % 4 == 0) {
+                    if (countD % 2 == 0) {
                         DCACP.adddFixture(dFixtureValue);
                         
                         fixtureAverageValue = (aFixtureValue + bFixtureValue + cFixtureValue + dFixtureValue )/ 4;

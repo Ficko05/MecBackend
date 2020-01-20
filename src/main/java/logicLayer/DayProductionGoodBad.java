@@ -24,7 +24,7 @@ public class DayProductionGoodBad {
 
     public DayProductionChartPoints countGoodBadProduction(List<Mechineinfo> dataPull) {
         LocalDateTime myDate = LocalDateTime.now().withHour(6).withMinute(0).withSecond(0);
-        myDate = myDate.withYear(2019).withMonth(12).withDayOfMonth(10);//TEST
+        myDate = myDate.withYear(2001).withMonth(2).withDayOfMonth(9);//TEST
         System.out.println(myDate.toString());//TEST
         DayProductionChartPoints DPCP = new DayProductionChartPoints();
 
